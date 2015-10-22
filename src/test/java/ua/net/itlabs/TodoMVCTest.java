@@ -28,7 +28,7 @@ public class TodoMVCTest {
 
         toActiveTodos();
         createTask("3");
-        cancelEditingByESC("3", "task3");
+        cancelEditingByESC("3", "task");
         toggle("3");
         edit("2","");
         todos.filter(visible).shouldBe(empty);
