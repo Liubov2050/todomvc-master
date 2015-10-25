@@ -1,0 +1,20 @@
+{
+  "hosts" : [ {
+    "title" : "DESKTOP-CDLSSAN",
+    "threads" : [ {
+      "title" : "7456@DESKTOP-CDLSSAN.main(1)",
+      "testCases" : [ {
+        "uid" : "c10b2af96ef29205",
+        "name" : "smokeTest",
+        "title" : "Smoke test",
+        "time" : {
+          "start" : 1445761748922,
+          "stop" : 1445761763045,
+          "duration" : 14123
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

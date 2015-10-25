@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1445761748902" stop="1445761763055" version="1.4.11" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>ua.net.itlabs.TodoMVCTest</name>
+    <test-cases>
+        <test-case start="1445761748922" stop="1445761763045" status="passed">
+            <name>smokeTest</name>
+            <steps>
+                <step start="1445761758212" stop="1445761758619" status="passed">
+                    <name>createTask[task1]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761758625" stop="1445761759136" status="passed">
+                    <name>edit[task1, 1]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761759138" stop="1445761759315" status="passed">
+                    <name>toggle[1]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761759363" stop="1445761759655" status="passed">
+                    <name>createTask[2]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761759756" stop="1445761759901" status="passed">
+                    <name>toActiveTodos</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761759902" stop="1445761760132" status="passed">
+                    <name>createTask[3]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761760133" stop="1445761760703" status="passed">
+                    <name>cancelEditingByESC[3, task]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761760705" stop="1445761760953" status="passed">
+                    <name>toggle[3]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761760956" stop="1445761761368" status="passed">
+                    <name>edit[2, ]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761761449" stop="1445761761600" status="passed">
+                    <name>toCompletedTodos</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761761601" stop="1445761761894" status="passed">
+                    <name>delete[1]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761761895" stop="1445761762075" status="passed">
+                    <name>toggle[3]</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1445761762108" stop="1445761762243" status="passed">
+                    <name>toActiveTodos</name>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title="screenshot" source="303d15b3-5971-49e8-8bbe-fef57a14945a-attachment.png" type="image/png" size="151212"/>
+            </attachments>
+            <labels>
+                <label name="host" value="DESKTOP-CDLSSAN"/>
+                <label name="thread" value="7456@DESKTOP-CDLSSAN.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JUnit"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

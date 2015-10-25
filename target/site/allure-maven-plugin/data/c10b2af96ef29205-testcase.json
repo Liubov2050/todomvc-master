@@ -1,0 +1,248 @@
+{
+  "uid" : "c10b2af96ef29205",
+  "name" : "smokeTest",
+  "title" : "Smoke test",
+  "time" : {
+    "start" : 1445761748922,
+    "stop" : 1445761763045,
+    "duration" : 14123
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 13
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "b65d21e64ce71c39",
+    "name" : "ua.net.itlabs.TodoMVCTest",
+    "title" : "Todo MVC test"
+  },
+  "steps" : [ {
+    "name" : "createTask[task1]",
+    "title" : "Create task [task1]",
+    "time" : {
+      "start" : 1445761758212,
+      "stop" : 1445761758619,
+      "duration" : 407
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "edit[task1, 1]",
+    "title" : "Edit [task1, 1]",
+    "time" : {
+      "start" : 1445761758625,
+      "stop" : 1445761759136,
+      "duration" : 511
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toggle[1]",
+    "title" : "Toggle [1]",
+    "time" : {
+      "start" : 1445761759138,
+      "stop" : 1445761759315,
+      "duration" : 177
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "createTask[2]",
+    "title" : "Create task [2]",
+    "time" : {
+      "start" : 1445761759363,
+      "stop" : 1445761759655,
+      "duration" : 292
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toActiveTodos",
+    "title" : "To active todos",
+    "time" : {
+      "start" : 1445761759756,
+      "stop" : 1445761759901,
+      "duration" : 145
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "createTask[3]",
+    "title" : "Create task [3]",
+    "time" : {
+      "start" : 1445761759902,
+      "stop" : 1445761760132,
+      "duration" : 230
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "cancelEditingByESC[3, task]",
+    "title" : "Cancel editing by ESC [3, task]",
+    "time" : {
+      "start" : 1445761760133,
+      "stop" : 1445761760703,
+      "duration" : 570
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toggle[3]",
+    "title" : "Toggle [3]",
+    "time" : {
+      "start" : 1445761760705,
+      "stop" : 1445761760953,
+      "duration" : 248
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "edit[2, ]",
+    "title" : "Edit [2, ]",
+    "time" : {
+      "start" : 1445761760956,
+      "stop" : 1445761761368,
+      "duration" : 412
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toCompletedTodos",
+    "title" : "To completed todos",
+    "time" : {
+      "start" : 1445761761449,
+      "stop" : 1445761761600,
+      "duration" : 151
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "delete[1]",
+    "title" : "Delete [1]",
+    "time" : {
+      "start" : 1445761761601,
+      "stop" : 1445761761894,
+      "duration" : 293
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toggle[3]",
+    "title" : "Toggle [3]",
+    "time" : {
+      "start" : 1445761761895,
+      "stop" : 1445761762075,
+      "duration" : 180
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "toActiveTodos",
+    "title" : "To active todos",
+    "time" : {
+      "start" : 1445761762108,
+      "stop" : 1445761762243,
+      "duration" : 135
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ {
+    "title" : "screenshot",
+    "source" : "303d15b3-5971-49e8-8bbe-fef57a14945a-attachment.png",
+    "type" : "image/png",
+    "size" : 151212,
+    "uid" : "e21975c3bca6f0b8"
+  } ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-CDLSSAN"
+  }, {
+    "name" : "thread",
+    "value" : "7456@DESKTOP-CDLSSAN.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "ua.net.itlabs.TodoMVCTest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}
