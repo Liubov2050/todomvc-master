@@ -2,7 +2,6 @@ package ua.net.itlabs;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Screenshots;
-import com.codeborne.selenide.SelenideElement;
 import com.google.common.io.Files;
 import org.junit.After;
 
@@ -42,7 +41,7 @@ public class TodoMVCTest {
         toggle("1");
 
         goToActiveTodos();
-        listShouldBeEmpty();
+        assertNoTodos();
         createTask("2");
         edit("2", "task", Keys.ESCAPE);
         toggle("2");
@@ -53,9 +52,9 @@ public class TodoMVCTest {
 
         goToActiveTodos();
         toggleAll();
-        listShouldBeEmpty();
+        assertNoTodos();
         clearCompleted();
-        listShouldBeEmpty();
+        assertNoTodos();
     }
 
     @Step
@@ -100,7 +99,7 @@ public class TodoMVCTest {
     }
 
     @Step
-    private void listShouldBeEmpty(){
+    private void assertNoTodos(){
         todos.filter(visible).shouldBe(empty);
     }
 
