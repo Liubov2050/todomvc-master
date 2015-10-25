@@ -14,8 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TodoMVCTest {
@@ -39,6 +38,7 @@ public class TodoMVCTest {
         createTask("task1");
         edit("task1", "1", Keys.ENTER);
         toggle("1");
+        assertCompleted("1");
 
         goToActiveTodos();
         assertNoTodos();
@@ -101,6 +101,11 @@ public class TodoMVCTest {
     @Step
     private void assertNoTodos(){
         todos.filter(visible).shouldBe(empty);
+    }
+
+    @Step
+    private void assertCompleted(String taskText) {
+        todos.findBy(exactText(taskText)).shouldHave(attribute("checked=''"));
     }
 
     ElementsCollection todos = $$("#todo-list li");
