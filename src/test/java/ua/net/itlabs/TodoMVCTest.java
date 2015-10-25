@@ -1,13 +1,11 @@
 package ua.net.itlabs;
 
 import com.codeborne.selenide.ElementsCollection;
-<<<<<<< HEAD
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.SelenideElement;
 import com.google.common.io.Files;
 import org.junit.After;
-=======
->>>>>>> origin/master
+
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 import ru.yandex.qatools.allure.annotations.Attachment;
@@ -70,56 +68,38 @@ public class TodoMVCTest {
         todos.find(exactText(taskName)).hover().$(".destroy").click();
     }
 
-<<<<<<< HEAD
     @Step
-    public void edit(String taskText, String newText) {
-=======
     public void edit(String taskText, String newText, Keys key) {
->>>>>>> origin/master
         todos.find(exactText(taskText)).$(".view label").doubleClick();
         $(".editing .edit").setValue(newText).sendKeys(key);
     }
 
-<<<<<<< HEAD
     @Step
-    public void cancelEditingByESC(String taskText, String newText) {
-        todos.find(exactText(taskText)).$(".view label").doubleClick();
-        tasksEditField.setValue(newText).sendKeys(Keys.ESCAPE);
-    }
-
-    @Step
-    public void toActiveTodos(){
-        $("[href='#/active']").click();
-    }
-
-    @Step
-    public void toCompletedTodos(){
-        $("[href='#/completed']").click();
-    }
-
-    @Step
-=======
     public void goToActiveTodos(){
         $("[href='#/active']").click();
     }
 
+    @Step
     public void goToCompletedTodos(){
         $("[href='#/completed']").click();
     }
 
->>>>>>> origin/master
+    @Step
     private void toggle(String taskText){
         todos.find(exactText(taskText)).$(".toggle").click();
     }
 
+    @Step
     private void toggleAll(){
         $("#toggle-all").click();
     }
 
+    @Step
     private void clearCompleted(){
         $("#clear-completed").click();
     }
 
+    @Step
     private void listShouldBeEmpty(){
         todos.filter(visible).shouldBe(empty);
     }

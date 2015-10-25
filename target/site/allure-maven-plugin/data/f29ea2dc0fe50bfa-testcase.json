@@ -1,0 +1,53 @@
+{
+  "uid" : "f29ea2dc0fe50bfa",
+  "name" : "smokeTest",
+  "title" : "Smoke test",
+  "time" : {
+    "start" : 1445763886288,
+    "stop" : 1445763899939,
+    "duration" : 13651
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "6290f555043c1c32",
+    "name" : "ua.net.itlabs.TodoMVCTest",
+    "title" : "Todo MVC test"
+  },
+  "steps" : [ ],
+  "attachments" : [ {
+    "title" : "screenshot",
+    "source" : "89cb27b9-01e8-40ca-8fa0-1542ee44c79a-attachment.png",
+    "type" : "image/png",
+    "size" : 151212,
+    "uid" : "9987e8b334942256"
+  } ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-CDLSSAN"
+  }, {
+    "name" : "thread",
+    "value" : "5276@DESKTOP-CDLSSAN.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "ua.net.itlabs.TodoMVCTest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

@@ -10,7 +10,7 @@
       "broken" : 0
     },
     "stories" : [ {
-      "uid" : "d3c02c7ddacddcda",
+      "uid" : "c1e2dd7a0e2a984f",
       "title" : "Without story",
       "statistic" : {
         "total" : 1,
@@ -21,13 +21,13 @@
         "broken" : 0
       },
       "testCases" : [ {
-        "uid" : "c10b2af96ef29205",
+        "uid" : "f29ea2dc0fe50bfa",
         "name" : "smokeTest",
         "title" : "Smoke test",
         "time" : {
-          "start" : 1445761748922,
-          "stop" : 1445761763045,
-          "duration" : 14123
+          "start" : 1445763886288,
+          "stop" : 1445763899939,
+          "duration" : 13651
         },
         "severity" : "NORMAL",
         "status" : "PASSED"

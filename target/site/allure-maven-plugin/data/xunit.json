@@ -1,17 +1,17 @@
 {
   "time" : {
-    "start" : 1445761748922,
-    "stop" : 1445761763045,
-    "duration" : 14123
+    "start" : 1445763886288,
+    "stop" : 1445763899939,
+    "duration" : 13651
   },
   "testSuites" : [ {
-    "uid" : "b65d21e64ce71c39",
+    "uid" : "6290f555043c1c32",
     "name" : "ua.net.itlabs.TodoMVCTest",
     "title" : "Todo MVC test",
     "time" : {
-      "start" : 1445761748922,
-      "stop" : 1445761763045,
-      "duration" : 14123
+      "start" : 1445763886288,
+      "stop" : 1445763899939,
+      "duration" : 13651
     },
     "statistic" : {
       "total" : 1,
@@ -23,13 +23,13 @@
     },
     "description" : null,
     "testCases" : [ {
-      "uid" : "c10b2af96ef29205",
+      "uid" : "f29ea2dc0fe50bfa",
       "name" : "smokeTest",
       "title" : "Smoke test",
       "time" : {
-        "start" : 1445761748922,
-        "stop" : 1445761763045,
-        "duration" : 14123
+        "start" : 1445763886288,
+        "stop" : 1445763899939,
+        "duration" : 13651
       },
       "severity" : "NORMAL",
       "status" : "PASSED"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1445763886265" stop="1445763899945" version="1.4.11" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>ua.net.itlabs.TodoMVCTest</name>
+    <test-cases>
+        <test-case start="1445763886288" stop="1445763899939" status="passed">
+            <name>smokeTest</name>
+            <steps/>
+            <attachments>
+                <attachment title="screenshot" source="89cb27b9-01e8-40ca-8fa0-1542ee44c79a-attachment.png" type="image/png" size="151212"/>
+            </attachments>
+            <labels>
+                <label name="host" value="DESKTOP-CDLSSAN"/>
+                <label name="thread" value="5276@DESKTOP-CDLSSAN.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JUnit"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
