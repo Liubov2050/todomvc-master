@@ -2,6 +2,7 @@ package ua.net.itlabs;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Screenshots;
+import com.codeborne.selenide.SelenideElement;
 import com.google.common.io.Files;
 import org.junit.After;
 
@@ -10,6 +11,7 @@ import org.openqa.selenium.Keys;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import javax.management.Attribute;
 import java.io.File;
 import java.io.IOException;
 
@@ -36,19 +38,20 @@ public class TodoMVCTest {
         open("http://todomvc.com/examples/troopjs_require/");
 
         createTask("task1");
-        edit("task1", "1", Keys.ENTER);
+        startEdit("task1", "1").pressEnter();
         toggle("1");
         assertCompleted("1");
 
         goToActiveTodos();
         assertNoTodos();
         createTask("2");
-        edit("2", "task", Keys.ESCAPE);
+        startEdit("2", "task").sendKeys(Keys.ESCAPE);
         toggle("2");
+        assertNoTodos();
 
         goToCompletedTodos();
-        delete("1");
         toggle("2");
+        clearCompleted();
 
         goToActiveTodos();
         toggleAll();
@@ -71,6 +74,12 @@ public class TodoMVCTest {
     public void edit(String taskText, String newText, Keys key) {
         todos.find(exactText(taskText)).$(".view label").doubleClick();
         $(".editing .edit").setValue(newText).sendKeys(key);
+    }
+
+    @Step
+    public SelenideElement startEdit(String taskText, String newText) {
+        todos.find(exactText(taskText)).$(".view label").doubleClick();
+        return ($(".editing .edit").setValue(newText));
     }
 
     @Step
@@ -105,7 +114,7 @@ public class TodoMVCTest {
 
     @Step
     private void assertCompleted(String taskText) {
-        todos.findBy(exactText(taskText)).shouldHave(attribute("checked=''"));
+        todos.find(exactText(taskText)).shouldHave(attribute("checked", ""));
     }
 
     ElementsCollection todos = $$("#todo-list li");
