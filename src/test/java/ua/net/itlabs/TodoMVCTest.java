@@ -11,7 +11,6 @@ import org.openqa.selenium.Keys;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 
-import javax.management.Attribute;
 import java.io.File;
 import java.io.IOException;
 
@@ -40,23 +39,27 @@ public class TodoMVCTest {
         createTask("task1");
         startEdit("task1", "1").pressEnter();
         toggle("1");
-        assertCompleted("1");
+        assertItemsLeft("0");
 
-        goToActiveTodos();
+        goToActive();
         assertNoTodos();
         createTask("2");
         startEdit("2", "task").sendKeys(Keys.ESCAPE);
         toggle("2");
         assertNoTodos();
 
-        goToCompletedTodos();
+        goToCompleted();
         toggle("2");
+        assertItemsLeft("1");
         clearCompleted();
 
-        goToActiveTodos();
+        goToActive();
+        assertItemsLeft("1");
         toggleAll();
         assertNoTodos();
-        clearCompleted();
+
+        goToAll();
+        delete("2");
         assertNoTodos();
     }
 
@@ -83,13 +86,18 @@ public class TodoMVCTest {
     }
 
     @Step
-    public void goToActiveTodos(){
+    public void goToActive(){
         $("[href='#/active']").click();
     }
 
     @Step
-    public void goToCompletedTodos(){
+    public void goToCompleted(){
         $("[href='#/completed']").click();
+    }
+
+    @Step
+    public void goToAll(){
+        $("[href='#/']").click();
     }
 
     @Step
@@ -113,8 +121,8 @@ public class TodoMVCTest {
     }
 
     @Step
-    private void assertCompleted(String taskText) {
-        todos.find(exactText(taskText)).shouldHave(attribute("checked", ""));
+    private void assertItemsLeft(String number) {
+        $("#todo-count strong").shouldHave(exactText(number));
     }
 
     ElementsCollection todos = $$("#todo-list li");
