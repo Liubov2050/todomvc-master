@@ -11,16 +11,18 @@ import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class RunTodoMVCandClearAfterTest extends TestBase{
 
     @Before
     public void openPage(){
-        open("http://todomvc.com/examples/troopjs_require/");
+        open("http://todomvc.com/examples/troopjs_require/#/");
     }
 
     @After
     public void clearData() throws IOException {
-        executeJavaScript("localStorage.clear();");
+        executeJavaScript("localStorage.clear()");
+        getWebDriver().navigate().refresh();
     }
 }

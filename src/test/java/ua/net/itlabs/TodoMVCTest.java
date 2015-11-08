@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
+import static com.codeborne.selenide.CollectionCondition.exactTexts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -43,6 +44,58 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
         assertNoTodos();
     }
 
+    @Test
+    public void completeEditByClickOutsideonAll(){
+        createTask("1");
+
+        startEdit("1", "task1");
+        clickOutside();
+        assertName("task1");
+    }
+
+    @Test
+    public void completeAndReopenAlOnAll() {
+
+        createTask("1");
+        createTask("2");
+
+        toggleAll();
+        assertItemsLeft("0");
+        toggleAll();
+        assertItemsLeft("2");
+        toggleAll();
+        assertItemsLeft("0");
+    }
+
+    @Test
+    public void deleteByEditingOnActive() {
+
+        createTask("1");
+
+        goToActive();
+        edit("1", "");
+        assertNoTodos();
+    }
+
+    @Test
+    public void editOnCompleted() {
+
+        createTask("1");
+        toggle("1");
+        assertItemsLeft("0");
+
+        goToCompleted();
+        assertVisible(1);
+
+        edit("1", "task1");
+        assertName("task1");
+        assertVisible(1);
+    }
+
+
+
+
+
     @Step
     public void createTask(String taskName){
         $("#new-todo").setValue(taskName).pressEnter();
@@ -54,9 +107,9 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
     }
 
     @Step
-    public void edit(String taskText, String newText, Keys key) {
+    public void edit(String taskText, String newText) {
         todos.find(exactText(taskText)).$(".view label").doubleClick();
-        $(".editing .edit").setValue(newText).sendKeys(key);
+        $(".editing .edit").setValue(newText).pressEnter();
     }
 
     @Step
@@ -100,9 +153,23 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
         todos.filter(visible).shouldBe(empty);
     }
 
+    private void assertVisible(int number){
+        todos.filter(visible).shouldHaveSize(number);
+    }
+
     @Step
     private void assertItemsLeft(String number) {
         $("#todo-count strong").shouldHave(exactText(number));
+    }
+
+    @Step
+    private void clickOutside(){
+        $("#new-todo").click();
+    }
+
+    @Step
+    private void assertName(String taskName){
+        todos.find(exactText(taskName)).shouldBe(visible);
     }
 
     ElementsCollection todos = $$("#todo-list li");
