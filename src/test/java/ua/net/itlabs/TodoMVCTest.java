@@ -1,40 +1,20 @@
 package ua.net.itlabs;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.SelenideElement;
-import com.google.common.io.Files;
-import org.junit.After;
 
 import org.junit.Test;
 import org.openqa.selenium.Keys;
-import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
-
-import java.io.File;
-import java.io.IOException;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TodoMVCTest {
-
-    @After
-    public void tearDown() throws IOException {
-        screenshot();
-    }
-
-    @Attachment(type = "image/png")
-    public byte[] screenshot() throws IOException {
-        File screenshot = Screenshots.getScreenShotAsFile();
-        return Files.toByteArray(screenshot);
-    }
+public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
 
     @Test
     public void smokeTest(){
-
-        open("http://todomvc.com/examples/troopjs_require/");
 
         createTask("task1");
         startEdit("task1", "1").pressEnter();
