@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
+public class TodoMVCTest extends OpenTodoMVCandClearAfterTest {
 
     @Test
-    public void smokeTest(){
+    public void testCoreActionsWithTasks(){
 
         createTask("task1");
         startEdit("task1", "1").pressEnter();
@@ -31,11 +31,12 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
 
         goToCompleted();
         toggle("2");
-        assertItemsLeft("1");
+        assertVisible(1);
         clearCompleted();
+        assertNoTodos();
 
         goToActive();
-        assertItemsLeft("1");
+        assertVisible(1);
         toggleAll();
         assertNoTodos();
 
@@ -45,7 +46,7 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
     }
 
     @Test
-    public void completeEditByClickOutsideonAll(){
+    public void testCompleteEditByClickOutsideOnAll(){
         createTask("1");
 
         startEdit("1", "task1");
@@ -54,7 +55,7 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
     }
 
     @Test
-    public void completeAndReopenAlOnAll() {
+    public void testCompleteAndReopenAlOnAll() {
 
         createTask("1");
         createTask("2");
@@ -68,17 +69,17 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
     }
 
     @Test
-    public void deleteByEditingOnActive() {
+    public void testDeleteByEditingOnActive() {
 
         createTask("1");
 
         goToActive();
-        edit("1", "");
+        startEdit("1", "").pressEnter();
         assertNoTodos();
     }
 
     @Test
-    public void editOnCompleted() {
+    public void testEditOnCompleted() {
 
         createTask("1");
         toggle("1");
@@ -87,14 +88,10 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
         goToCompleted();
         assertVisible(1);
 
-        edit("1", "task1");
+        startEdit("1", "task1").pressEnter();
         assertName("task1");
         assertVisible(1);
     }
-
-
-
-
 
     @Step
     public void createTask(String taskName){
@@ -104,12 +101,6 @@ public class TodoMVCTest extends RunTodoMVCandClearAfterTest {
     @Step
     public void delete(String taskName){
         todos.find(exactText(taskName)).hover().$(".destroy").click();
-    }
-
-    @Step
-    public void edit(String taskText, String newText) {
-        todos.find(exactText(taskText)).$(".view label").doubleClick();
-        $(".editing .edit").setValue(newText).pressEnter();
     }
 
     @Step

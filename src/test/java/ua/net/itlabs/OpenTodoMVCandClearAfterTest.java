@@ -9,16 +9,15 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class RunTodoMVCandClearAfterTest extends TestBase {
+public class OpenTodoMVCandClearAfterTest extends TestBase {
 
     @Before
     public void openPage(){
-        open("http://todomvc.com/examples/troopjs_require/#/");
+        open("https://todomvc4tasj.herokuapp.com/");
     }
 
     @After
     public void clearData() throws IOException {
         executeJavaScript("localStorage.clear()");
-        getWebDriver().navigate().refresh();
     }
 }
